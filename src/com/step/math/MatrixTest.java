@@ -30,6 +30,18 @@ public class MatrixTest {
   }
 
   @Test
+  public void shouldCheckIfDimensionIsNotEqual() {
+    int[][] m3 = { { 2, 2 }, { 4, 4 }, { 6, 6 } };
+    Matrix matrix3 = new Matrix(m3, 3, 2);
+    Matrix actual = this.matrix1.add(matrix3);
+    assertEquals(
+      "should give null when dimensions are not equal",
+      null,
+      actual
+    );
+  }
+
+  @Test
   public void shouldSubtractTwoMatrices() {
     int[][] expected = { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
     Matrix expectedMatrix = new Matrix(expected, 3, 3);
