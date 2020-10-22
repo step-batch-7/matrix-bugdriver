@@ -50,4 +50,18 @@ public class MatrixTest {
     int actual = this.matrix1.determinant();
     assertEquals("should give determinant of Matrix", 0, actual);
   }
+
+  @Test
+  public void shouldCheckIfTwoMatrixAreEqual() {
+    boolean actual = this.matrix1.equals(this.matrix2);
+    assertEquals("should give determinant of Matrix", true, actual);
+  }
+
+  @Test
+  public void shouldCheckIfTwoMatrixAreNotEqual() {
+    int[][] m3 = { { 6, 6, 6 }, { 12, 12, 12 }, { 18, 18, 18 } };
+    Matrix matrix3 = new Matrix(m3, 3, 3);
+    boolean actual = this.matrix1.equals(m3);
+    assertEquals("should give determinant of Matrix", false, actual);
+  }
 }
