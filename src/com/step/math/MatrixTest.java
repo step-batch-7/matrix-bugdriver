@@ -64,4 +64,14 @@ public class MatrixTest {
     boolean actual = this.matrix1.equals(m3);
     assertEquals("should give determinant of Matrix", false, actual);
   }
+
+  @Test
+  public void shouldGiveStringRepresentationOfMatrix() {
+    String actual = this.matrix1.toString();
+    assertEquals(
+      "should give determinant of Matrix",
+      "[ \n  [ 1, 1, 1, ], \n  [ 2, 2, 2, ], \n  [ 3, 3, 3, ], \n]",
+      actual
+    );
+  }
 }
