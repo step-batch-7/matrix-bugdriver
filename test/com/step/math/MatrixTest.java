@@ -54,6 +54,18 @@ public class MatrixTest {
   }
 
   @Test
+  public void shouldMultiplyTwoMatricesWithDifferentDimention() {
+    int[][] m1 = { { 1, 2, 3 }, { 4, 5, 6 } };
+    int[][] m2 = { { 7, 8 }, { 9, 10 }, { 11, 12 } };
+    this.matrix1 = new Matrix(m1, 2, 3);
+    this.matrix2 = new Matrix(m2, 3, 2);
+    int[][] expected = { { 58, 64 }, { 139, 154 } };
+    Matrix expectedMatrix = new Matrix(expected, 2, 2);
+    Matrix actual = this.matrix1.multiply(this.matrix2);
+    assertEquals(expectedMatrix, actual);
+  }
+
+  @Test
   public void shouldGiveDeterminantOfMatrix() {
     int actual = this.matrix1.determinant();
     assertEquals(0, actual);
