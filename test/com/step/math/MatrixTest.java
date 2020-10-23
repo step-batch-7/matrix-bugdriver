@@ -66,6 +66,16 @@ public class MatrixTest {
   }
 
   @Test
+  public void shouldCheckIfValidMatrixDimentionForMultiply() {
+    int[][] m1 = { { 1, 2, 3 }, { 4, 5, 6 }, { 11, 12, 13 } };
+    int[][] m2 = { { 7, 8 }, { 9, 10 } };
+    this.matrix1 = new Matrix(m1, 3, 3);
+    this.matrix2 = new Matrix(m2, 2, 2);
+    Matrix actual = this.matrix1.multiply(this.matrix2);
+    assertEquals(null, actual);
+  }
+
+  @Test
   public void shouldGiveDeterminantOfMatrix() {
     int actual = this.matrix1.determinant();
     assertEquals(0, actual);
