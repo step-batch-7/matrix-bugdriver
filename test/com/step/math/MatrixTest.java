@@ -1,6 +1,9 @@
 package com.step.math;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -34,7 +37,7 @@ public class MatrixTest {
     int[][] m3 = { { 2, 2 }, { 4, 4 }, { 6, 6 } };
     Matrix matrix3 = new Matrix(m3, 3, 2);
     Matrix actual = this.matrix1.add(matrix3);
-    assertEquals(null, actual);
+    assertNull(actual);
   }
 
   @Test
@@ -54,7 +57,7 @@ public class MatrixTest {
   }
 
   @Test
-  public void shouldMultiplyTwoMatricesWithDifferentDimention() {
+  public void shouldMultiplyTwoMatricesWithDifferentDimension() {
     int[][] m1 = { { 1, 2, 3 }, { 4, 5, 6 } };
     int[][] m2 = { { 7, 8 }, { 9, 10 }, { 11, 12 } };
     this.matrix1 = new Matrix(m1, 2, 3);
@@ -72,7 +75,7 @@ public class MatrixTest {
     this.matrix1 = new Matrix(m1, 3, 3);
     this.matrix2 = new Matrix(m2, 2, 2);
     Matrix actual = this.matrix1.multiply(this.matrix2);
-    assertEquals(null, actual);
+    assertNull(actual);
   }
 
   @Test
@@ -84,7 +87,7 @@ public class MatrixTest {
   @Test
   public void shouldCheckIfTwoMatrixAreEqual() {
     boolean actual = this.matrix1.equals(this.matrix2);
-    assertEquals(true, actual);
+    assertTrue(actual);
   }
 
   @Test
@@ -92,7 +95,7 @@ public class MatrixTest {
     int[][] m3 = { { 6, 6, 6 }, { 12, 12, 12 }, { 18, 18, 18 } };
     Matrix matrix3 = new Matrix(m3, 3, 3);
     boolean actual = this.matrix1.equals(m3);
-    assertEquals(false, actual);
+    assertFalse(actual);
   }
 
   @Test
