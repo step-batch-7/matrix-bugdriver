@@ -66,7 +66,7 @@ public class MatrixTest {
   }
 
   @Test
-  public void shouldCheckIfValidMatrixDimentionForMultiply() {
+  public void shouldCheckIfValidMatrixDimensionForMultiply() {
     int[][] m1 = { { 1, 2, 3 }, { 4, 5, 6 }, { 11, 12, 13 } };
     int[][] m2 = { { 7, 8 }, { 9, 10 } };
     this.matrix1 = new Matrix(m1, 3, 3);
