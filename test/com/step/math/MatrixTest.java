@@ -17,6 +17,10 @@ public class MatrixTest {
     this.matrix2 = new Matrix(matrix2, 3, 3);
   }
 
+  private Matrix matrix_2x2(int a, int b, int c, int d) {
+    return new Matrix(new int[][] { { a, b }, { c, d } }, 2, 2);
+  }
+
   @Before
   public void initMatrices() {
     int[][] m1 = { { 1, 1, 1 }, { 2, 2, 2 }, { 3, 3, 3 } };
@@ -25,19 +29,21 @@ public class MatrixTest {
   }
 
   @Test
-  public void shouldAddTwoMatrices() {
-    int[][] expected = { { 2, 2, 2 }, { 4, 4, 4 }, { 6, 6, 6 } };
-    Matrix expectedMatrix = new Matrix(expected, 3, 3);
-    Matrix actual = this.matrix1.add(this.matrix2);
+  public void addShouldAddTwo2x2Matrices() {
+    Matrix firstMatrix = matrix_2x2(2, 5, 6, 7);
+    Matrix secondMatrix = matrix_2x2(4, 3, 5, 2);
+    Matrix expectedMatrix = matrix_2x2(6, 8, 11, 9);
+    Matrix actual = firstMatrix.add(secondMatrix);
     assertEquals(expectedMatrix, actual);
   }
 
   @Test
   public void shouldCheckIfDimensionIsNotEqual() {
+    Matrix firstMatrix = matrix_2x2(2, 5, 6, 7);
     int[][] m3 = { { 2, 2 }, { 4, 4 }, { 6, 6 } };
-    Matrix matrix3 = new Matrix(m3, 3, 2);
-    Matrix actual = this.matrix1.add(matrix3);
-    assertNull(actual);
+    Matrix secondMatrix = new Matrix(m3, 3, 2);
+    Matrix actual = firstMatrix.add(secondMatrix);
+    assertEquals(null, actual);
   }
 
   @Test
